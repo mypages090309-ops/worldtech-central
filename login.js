@@ -23,15 +23,19 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
 
     if (result.success) {
 
-      // 🔥 IMPORTANT: SAVE USER TO LOCAL STORAGE
+      // ✅ SAVE USER
       localStorage.setItem("user", JSON.stringify(result.user));
 
       document.getElementById("message").innerText =
         "✅ Login successful! Redirecting...";
 
-      // REDIRECT TO DASHBOARD
+      // 🔥 ROLE CHECK
       setTimeout(() => {
-        window.location.href = "dashboard.html";
+        if (result.user.username === "admin") {
+          window.location.href = "admin.html";
+        } else {
+          window.location.href = "dashboard.html";
+        }
       }, 1500);
 
     } else {
