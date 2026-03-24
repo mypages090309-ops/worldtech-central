@@ -2,28 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dashboard - WorldTech</title>
+  <title>Student Dashboard - WorldTech</title>
   <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
 
-<div class="dashboard">
+<!-- PARTICLES -->
+<div id="particles-js"></div>
+
+<div class="container">
 
   <!-- HEADER -->
   <div class="header">
-    <h2>WorldTech Dashboard</h2>
-    <button onclick="logout()">Logout</button>
+    <h1>Student Dashboard</h1>
+    <button onclick="logout()" class="logout-btn">Logout</button>
   </div>
 
   <!-- USER INFO -->
   <div class="card">
-    <h3>Welcome, <span id="username"></span> 👋</h3>
+    <h2>Welcome 👋</h2>
+    <p><strong>Username:</strong> <span id="username"></span></p>
     <p><strong>Name:</strong> <span id="name"></span></p>
     <p><strong>Course:</strong> <span id="course"></span></p>
   </div>
 
 </div>
 
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script src="particles-config.js"></script>
 <script src="dashboard.js"></script>
+
 </body>
 </html>
