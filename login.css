@@ -8,7 +8,15 @@ body {
   height: 100vh;
 }
 
-/* CONTAINER */
+/* PARTICLES */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* CARD */
 .container {
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(15px);
@@ -17,12 +25,12 @@ body {
   width: 320px;
   border: 1px solid rgba(255,255,255,0.08);
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  animation: float 4s ease-in-out infinite;
 }
 
-/* TITLE */
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 /* INPUT */
@@ -43,7 +51,6 @@ input {
   border: none;
   background: #1e293b;
   color: white;
-  transition: 0.3s;
 }
 
 input:focus {
@@ -60,7 +67,6 @@ button {
   border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 button:hover {
@@ -68,7 +74,6 @@ button:hover {
   box-shadow: 0 10px 20px rgba(56,189,248,0.4);
 }
 
-/* MESSAGE */
 #message {
   margin-top: 15px;
   text-align: center;
