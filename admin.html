@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard - WorldTech</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- PARTICLES BACKGROUND -->
+<div id="particles-js"></div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Admin Dashboard</h1>
+    <button onclick="logout()" class="logout-btn">Logout</button>
+  </div>
+
+  <!-- TITLE -->
+  <h2>Enrolled Students</h2>
+
+  <!-- TABLE -->
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Course</th>
+          <th>Action</th> <!-- 🔥 DELETE BUTTON COLUMN -->
+        </tr>
+      </thead>
+
+      <tbody id="studentTable">
+        <!-- DATA FROM JS -->
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script src="particles-config.js"></script>
+<script src="admin.js"></script>
+
+</body>
+</html>
