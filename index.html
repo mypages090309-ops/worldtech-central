@@ -36,8 +36,17 @@
     </p>
 
     <div class="hero-buttons" data-aos="zoom-in" data-aos-delay="400">
-      <button class="cta">Enroll Now</button>
-      <button class="secondary">View Courses</button>
+      
+      <!-- ✅ CONNECTED ENROLL BUTTON -->
+      <button class="cta" onclick="window.location.href='enroll.html'">
+        Enroll Now
+      </button>
+
+      <!-- ✅ SMOOTH SCROLL -->
+      <button class="secondary" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">
+        View Courses
+      </button>
+
     </div>
   </div>
 </section>
