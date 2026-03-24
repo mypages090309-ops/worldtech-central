@@ -7,6 +7,9 @@
 </head>
 <body>
 
+<!-- ✅ PARTICLES -->
+<div id="particles-js"></div>
+
 <div class="container">
 
   <h1>Student Login</h1>
@@ -30,6 +33,25 @@
   <p id="message"></p>
 
 </div>
+
+<!-- ✅ PARTICLES SCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 60 },
+    size: { value: 3 },
+    move: { speed: 1 },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#38bdf8",
+      opacity: 0.4
+    }
+  }
+});
+</script>
 
 <script src="login.js"></script>
 </body>
