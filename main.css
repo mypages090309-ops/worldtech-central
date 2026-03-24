@@ -10,26 +10,32 @@ body {
   color: white;
 }
 
+/* PARTICLES */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
 /* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 20px 40px;
-  background: rgba(2,6,23,0.8);
+  align-items: center;
+  background: rgba(2,6,23,0.7);
   backdrop-filter: blur(10px);
 }
 
 .logo {
-  font-size: 22px;
   color: #38bdf8;
   font-weight: bold;
 }
 
-/* NAV LINKS */
 .nav-links {
   display: flex;
-  gap: 30px;
+  gap: 25px;
   align-items: center;
 }
 
@@ -39,7 +45,7 @@ body {
 }
 
 .login-btn {
-  background: linear-gradient(135deg, #38bdf8, #22c55e);
+  background: linear-gradient(135deg,#38bdf8,#22c55e);
   border: none;
   padding: 8px 16px;
   border-radius: 8px;
@@ -52,16 +58,6 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  position: relative;
-}
-
-.gradient-bg {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: #38bdf8;
-  filter: blur(150px);
-  opacity: 0.3;
 }
 
 .hero h1 {
@@ -87,18 +83,18 @@ body {
 }
 
 .secondary {
-  background: transparent;
   border: 1px solid #38bdf8;
   padding: 12px 24px;
   border-radius: 8px;
   color: #38bdf8;
+  background: transparent;
 }
 
 /* COURSES */
 .course-grid {
   display: flex;
-  gap: 20px;
   justify-content: center;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
@@ -123,6 +119,7 @@ section {
 /* MOBILE */
 .hamburger {
   display: none;
+  font-size: 28px;
 }
 
 @media (max-width: 768px) {
@@ -134,8 +131,8 @@ section {
     position: absolute;
     top: 70px;
     right: 0;
-    background: #020617;
     flex-direction: column;
+    background: #020617;
     padding: 20px;
     display: none;
   }
