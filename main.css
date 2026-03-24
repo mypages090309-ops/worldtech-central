@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
 }
 
 body {
@@ -18,20 +18,14 @@ body {
   z-index: -1;
 }
 
-/* GLASS EFFECT */
-.glass {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 15px;
-}
-
 /* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
   padding: 20px 40px;
   align-items: center;
+  background: rgba(2,6,23,0.7);
+  backdrop-filter: blur(10px);
 }
 
 .logo {
@@ -39,10 +33,15 @@ body {
   font-weight: bold;
 }
 
-/* NAV */
 .nav-links {
   display: flex;
   gap: 25px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #cbd5f5;
+  text-decoration: none;
 }
 
 .login-btn {
@@ -56,28 +55,13 @@ body {
 .hero {
   height: 90vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-}
-
-.hero-content {
-  padding: 40px;
+  justify-content: center;
   text-align: center;
 }
 
-/* GRADIENT TEXT */
-.gradient-text {
+.hero h1 {
   font-size: 48px;
-  background: linear-gradient(90deg, #38bdf8, #22c55e, #9333ea);
-  background-size: 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientMove 5s infinite linear;
-}
-
-@keyframes gradientMove {
-  0% { background-position: 0%; }
-  100% { background-position: 200%; }
 }
 
 .hero p {
@@ -87,15 +71,15 @@ body {
 
 .hero-buttons {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   justify-content: center;
 }
 
 .cta {
   background: #22c55e;
   padding: 12px 24px;
-  border-radius: 8px;
   border: none;
+  border-radius: 8px;
 }
 
 .secondary {
@@ -109,24 +93,36 @@ body {
 /* COURSES */
 .course-grid {
   display: flex;
-  gap: 20px;
   justify-content: center;
-  padding: 60px 20px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
 .course-card {
+  background: #1e293b;
   padding: 20px;
+  border-radius: 12px;
   max-width: 300px;
   transition: 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+}
+
+/* SECTIONS */
+section {
+  padding: 80px 20px;
+  text-align: center;
 }
 
 /* MOBILE */
 .hamburger {
   display: none;
+  font-size: 28px;
 }
 
-@media (max-width:768px){
+@media (max-width: 768px) {
   .hamburger {
     display: block;
   }
@@ -137,15 +133,15 @@ body {
     right: 0;
     flex-direction: column;
     background: #020617;
-    display: none;
     padding: 20px;
+    display: none;
   }
 
   .nav-links.active {
     display: flex;
   }
 
-  .gradient-text {
+  .hero h1 {
     font-size: 28px;
   }
 }
