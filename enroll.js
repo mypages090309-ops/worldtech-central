@@ -1,28 +1,30 @@
-// FORM SUBMIT
-document.getElementById("enrollForm").addEventListener("submit", function(e) {
+document.getElementById("enrollForm").addEventListener("submit", async function(e) {
   e.preventDefault();
 
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const phone = document.getElementById("phone").value;
-  const course = document.getElementById("course").value;
+  const data = {
+    username: document.getElementById("username").value,
+    password: document.getElementById("password").value,
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    course: document.getElementById("course").value
+  };
 
-  if (!username || !password || !name || !email || !phone || !course) {
-    alert("Please fill out all fields.");
-    return;
+  const res = await fetch("https://YOUR-WORKER-URL", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  });
+
+  const result = await res.json();
+
+  if (result.success) {
+    document.getElementById("successMsg").innerText =
+      "✅ Successfully enrolled!";
+    document.getElementById("enrollForm").reset();
   }
-
-  if (password.length < 6) {
-    alert("Password must be at least 6 characters.");
-    return;
-  }
-
-  document.getElementById("successMsg").innerText =
-    "✅ Account created! Welcome " + username;
-
-  document.getElementById("enrollForm").reset();
 });
 
 // CLOSE BUTTON
