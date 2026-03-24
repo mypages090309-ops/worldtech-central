@@ -7,61 +7,61 @@
 </head>
 <body>
 
-<!-- CLOSE BUTTON -->
-<button class="close-btn" onclick="goBack()">✕</button>
+<div id="particles-js"></div>
+
+<button class="close-btn" onclick="goBack()">✖</button>
 
 <div class="container">
 
   <h1>Student Enrollment</h1>
 
-  <form id="enrollForm">
+  <h2>Account Information</h2>
 
-    <h2>Account Information</h2>
+  <div class="input-group">
+    <label>Username</label>
+    <input type="text" id="username">
+  </div>
 
-    <div class="input-group">
-      <label>Username</label>
-      <input type="text" id="username" required>
-    </div>
+  <div class="input-group">
+    <label>Password</label>
+    <input type="password" id="password">
+  </div>
 
-    <div class="input-group">
-      <label>Password</label>
-      <input type="password" id="password" required>
-    </div>
+  <h2>Student Information</h2>
 
-    <h2>Student Information</h2>
+  <div class="input-group">
+    <label>Full Name</label>
+    <input type="text" id="name">
+  </div>
 
-    <div class="input-group">
-      <label>Full Name</label>
-      <input type="text" id="name" required>
-    </div>
+  <div class="input-group">
+    <label>Email</label>
+    <input type="email" id="email">
+  </div>
 
-    <div class="input-group">
-      <label>Email</label>
-      <input type="email" id="email" required>
-    </div>
+  <div class="input-group">
+    <label>Phone</label>
+    <input type="text" id="phone">
+  </div>
 
-    <div class="input-group">
-      <label>Phone Number</label>
-      <input type="text" id="phone" required>
-    </div>
+  <div class="input-group">
+    <label>Course</label>
+    <select id="course">
+      <option value="">Select Course</option>
+      <option>Contact Center NC II</option>
+      <option>CSS NC II</option>
+    </select>
+  </div>
 
-    <div class="input-group">
-      <label>Course</label>
-      <select id="course" required>
-        <option value="">Select Course</option>
-        <option>Contact Center NC II</option>
-        <option>CSS NC II</option>
-      </select>
-    </div>
-
-    <button type="submit">Create Account & Enroll</button>
-
-  </form>
+  <button onclick="submitForm()">Create Account & Enroll</button>
 
   <p id="successMsg"></p>
 
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script src="particles-config.js"></script>
 <script src="enroll.js"></script>
+
 </body>
 </html>
