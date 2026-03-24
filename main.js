@@ -1,13 +1,19 @@
-// Smooth scroll for navigation
+// Initialize animations
+AOS.init({
+  duration: 1000,
+  once: true
+});
+
+// Smooth scroll
 document.querySelectorAll("nav a").forEach(anchor => {
   anchor.addEventListener("click", function(e) {
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    target.scrollIntoView({ behavior: "smooth" });
+    document.querySelector(this.getAttribute("href"))
+      .scrollIntoView({ behavior: "smooth" });
   });
 });
 
-// CTA button action
+// CTA button
 document.querySelector(".cta").addEventListener("click", () => {
-  alert("Enrollment feature coming soon!");
+  alert("Enrollment system coming soon 🚀");
 });
