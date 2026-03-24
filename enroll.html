@@ -7,14 +7,28 @@
 </head>
 <body>
 
-<!-- ❌ CLOSE BUTTON -->
+<!-- CLOSE BUTTON -->
 <button class="close-btn" onclick="goBack()">✕</button>
 
 <div class="container">
 
-  <h1>Student Enrollment Form</h1>
+  <h1>Student Enrollment</h1>
 
   <form id="enrollForm">
+
+    <h2>Account Information</h2>
+
+    <div class="input-group">
+      <label>Username</label>
+      <input type="text" id="username" required>
+    </div>
+
+    <div class="input-group">
+      <label>Password</label>
+      <input type="password" id="password" required>
+    </div>
+
+    <h2>Student Information</h2>
 
     <div class="input-group">
       <label>Full Name</label>
@@ -40,7 +54,7 @@
       </select>
     </div>
 
-    <button type="submit">Submit Enrollment</button>
+    <button type="submit">Create Account & Enroll</button>
 
   </form>
 
