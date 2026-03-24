@@ -1,13 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
 body {
-  background: #0f172a;
+  background: radial-gradient(circle at top, #0f172a, #020617);
   color: white;
+  font-family: Arial, sans-serif;
 }
 
 /* NAVBAR */
@@ -15,86 +9,81 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 20px 40px;
-  background: #020617;
+  background: rgba(2, 6, 23, 0.8);
+  backdrop-filter: blur(10px);
 }
 
 .logo {
-  font-size: 22px;
-  font-weight: bold;
   color: #38bdf8;
-}
-
-.navbar nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: white;
-}
-
-.btn {
-  padding: 8px 16px;
-  background: #38bdf8;
-  border: none;
-  color: black;
-  cursor: pointer;
-  border-radius: 6px;
+  font-weight: bold;
 }
 
 /* HERO */
 .hero {
+  position: relative;
   text-align: center;
-  padding: 100px 20px;
+  padding: 120px 20px;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: #38bdf8;
+  filter: blur(120px);
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: pulse 6s infinite alternate;
+}
+
+@keyframes pulse {
+  from { opacity: 0.3; }
+  to { opacity: 0.7; }
 }
 
 .hero h1 {
-  font-size: 42px;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  margin-bottom: 30px;
-  color: #cbd5f5;
+  font-size: 48px;
 }
 
 .cta {
-  padding: 12px 24px;
-  background: #22c55e;
+  margin-top: 20px;
+  padding: 14px 28px;
+  background: linear-gradient(90deg, #22c55e, #38bdf8);
   border: none;
-  color: white;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta:hover {
+  transform: scale(1.1);
 }
 
 /* COURSES */
-.courses {
-  padding: 60px 20px;
-  text-align: center;
-}
-
 .course-card {
   background: #1e293b;
-  padding: 20px;
   margin: 20px auto;
+  padding: 20px;
   max-width: 400px;
-  border-radius: 10px;
+  border-radius: 12px;
+  transition: 0.3s;
 }
 
-/* ABOUT */
-.about {
-  padding: 60px 20px;
-  text-align: center;
-  background: #020617;
+.course-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(56,189,248,0.3);
 }
 
-/* CONTACT */
-.contact {
+/* SECTIONS */
+section {
   padding: 60px 20px;
   text-align: center;
 }
 
 /* FOOTER */
 footer {
-  text-align: center;
   padding: 20px;
   background: #020617;
-  font-size: 14px;
 }
