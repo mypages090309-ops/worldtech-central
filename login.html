@@ -1,36 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Login - WorldTech</title>
+  <title>Login</title>
   <link rel="stylesheet" href="login.css">
 </head>
 <body>
 
-<!-- 🔥 PARTICLES -->
 <div id="particles-js"></div>
 
 <div class="container">
   <h1>Student Login</h1>
 
   <form id="loginForm">
-    <div class="input-group">
-      <label>Username</label>
-      <input type="text" id="username" required>
-    </div>
-
-    <div class="input-group">
-      <label>Password</label>
-      <input type="password" id="password" required>
-    </div>
-
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
     <button type="submit">Login</button>
   </form>
 
   <p id="message"></p>
 </div>
 
-<!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 <script src="particles-config.js"></script>
 <script src="login.js"></script>
