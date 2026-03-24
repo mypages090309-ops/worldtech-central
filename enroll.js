@@ -10,20 +10,28 @@ document.getElementById("enrollForm").addEventListener("submit", async function(
     course: document.getElementById("course").value
   };
 
-  const res = await fetch("https://YOUR-WORKER-URL", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
-  });
+  try {
+    const res = await fetch("https://enrollmentworker.q2296439.workers.dev/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
 
-  const result = await res.json();
+    const result = await res.json();
 
-  if (result.success) {
-    document.getElementById("successMsg").innerText =
-      "✅ Successfully enrolled!";
-    document.getElementById("enrollForm").reset();
+    if (result.success) {
+      document.getElementById("successMsg").innerText =
+        "✅ Successfully enrolled!";
+      document.getElementById("enrollForm").reset();
+    } else {
+      alert("Something went wrong.");
+    }
+
+  } catch (err) {
+    alert("Error connecting to server.");
+    console.error(err);
   }
 });
 
