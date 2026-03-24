@@ -15,22 +15,9 @@ body {
   z-index: -1;
 }
 
-/* CLOSE */
-.close-btn {
-  position: fixed;
-  top: 20px;
-  right: 25px;
-  font-size: 20px;
-  background: rgba(255,255,255,0.1);
-  border: none;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-/* CARD */
+/* CONTAINER */
 .container {
+  position: relative;
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(15px);
   padding: 30px;
@@ -41,11 +28,37 @@ body {
   animation: float 4s ease-in-out infinite;
 }
 
+/* FLOAT */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* TEXT */
+h1 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
 h2 {
   margin-top: 15px;
   color: #38bdf8;
 }
 
+/* INPUT */
 .input-group {
   margin-bottom: 15px;
 }
@@ -59,6 +72,7 @@ input, select {
   color: white;
 }
 
+/* BUTTON */
 button {
   width: 100%;
   padding: 12px;
@@ -68,12 +82,8 @@ button {
   cursor: pointer;
 }
 
+/* SUCCESS */
 #successMsg {
   margin-top: 10px;
   text-align: center;
-}
-
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
 }
