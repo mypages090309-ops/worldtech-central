@@ -1,6 +1,6 @@
 body {
-  font-family: Arial;
-  background: linear-gradient(135deg, #020617, #0f172a);
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
   color: white;
   display: flex;
   justify-content: center;
@@ -15,20 +15,40 @@ body {
   padding: 30px;
   border-radius: 15px;
   width: 320px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* TITLE */
+h1 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 /* INPUT */
 .input-group {
   margin-bottom: 15px;
-  text-align: left;
+}
+
+label {
+  font-size: 13px;
+  color: #cbd5f5;
 }
 
 input {
   width: 100%;
   padding: 10px;
+  margin-top: 5px;
   border-radius: 8px;
   border: none;
+  background: #1e293b;
+  color: white;
+  transition: 0.3s;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(56,189,248,0.5);
 }
 
 /* BUTTON */
@@ -37,11 +57,19 @@ button {
   padding: 12px;
   background: linear-gradient(135deg,#38bdf8,#22c55e);
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
+  font-weight: bold;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(56,189,248,0.4);
 }
 
 /* MESSAGE */
 #message {
   margin-top: 15px;
+  text-align: center;
 }
