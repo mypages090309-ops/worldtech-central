@@ -1,8 +1,14 @@
 document.getElementById("loginForm").addEventListener("submit", async function(e) {
   e.preventDefault();
 
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  // VALIDATION
+  if (!username || !password) {
+    alert("Please enter username and password.");
+    return;
+  }
 
   try {
     const res = await fetch("https://loginworker.q2296439.workers.dev/", {
@@ -16,18 +22,25 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
     const result = await res.json();
 
     if (result.success) {
-      document.getElementById("message").innerText = "✅ Login successful!";
 
+      // 🔥 IMPORTANT: SAVE USER TO LOCAL STORAGE
+      localStorage.setItem("user", JSON.stringify(result.user));
+
+      document.getElementById("message").innerText =
+        "✅ Login successful! Redirecting...";
+
+      // REDIRECT TO DASHBOARD
       setTimeout(() => {
         window.location.href = "dashboard.html";
       }, 1500);
 
     } else {
-      document.getElementById("message").innerText = "❌ Invalid login.";
+      document.getElementById("message").innerText =
+        "❌ Invalid username or password.";
     }
 
-  } catch (err) {
-    console.error(err);
-    alert("Server error.");
+  } catch (error) {
+    console.error(error);
+    alert("⚠️ Server error. Try again.");
   }
 });
