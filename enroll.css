@@ -1,48 +1,17 @@
-body {
-  font-family: Arial;
-  background: #020617;
+/* CLOSE BUTTON */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 22px;
+  background: transparent;
+  border: none;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-/* FORM CONTAINER */
-.container {
-  background: rgba(255,255,255,0.05);
-  padding: 30px;
-  border-radius: 15px;
-  backdrop-filter: blur(15px);
-  width: 350px;
-}
-
-/* INPUTS */
-.input-group {
-  margin-bottom: 15px;
-}
-
-input, select {
-  width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-}
-
-/* BUTTON */
-button {
-  width: 100%;
-  padding: 12px;
-  background: linear-gradient(135deg,#38bdf8,#22c55e);
-  border: none;
-  border-radius: 8px;
-  color: black;
-  font-weight: bold;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-/* SUCCESS */
-#successMsg {
-  margin-top: 15px;
-  color: #22c55e;
+.close-btn:hover {
+  color: #38bdf8;
+  transform: scale(1.2);
 }
