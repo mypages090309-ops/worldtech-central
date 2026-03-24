@@ -1,12 +1,46 @@
-if (result.success) {
+document.getElementById("loginForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
 
-  // 🔥 SAVE USER DATA (IMPORTANT!)
-  localStorage.setItem("user", JSON.stringify(result.user));
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
 
-  document.getElementById("message").innerText =
-    "✅ Login successful! Redirecting...";
+  // VALIDATION
+  if (!username || !password) {
+    alert("Please enter username and password.");
+    return;
+  }
 
-  setTimeout(() => {
-    window.location.href = "dashboard.html";
-  }, 1500);
-}
+  try {
+    const res = await fetch("https://loginworker.q2296439.workers.dev/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ username, password })
+    });
+
+    const result = await res.json();
+
+    if (result.success) {
+
+      // 🔥 IMPORTANT: SAVE USER TO LOCAL STORAGE
+      localStorage.setItem("user", JSON.stringify(result.user));
+
+      document.getElementById("message").innerText =
+        "✅ Login successful! Redirecting...";
+
+      // REDIRECT TO DASHBOARD
+      setTimeout(() => {
+        window.location.href = "dashboard.html";
+      }, 1500);
+
+    } else {
+      document.getElementById("message").innerText =
+        "❌ Invalid username or password.";
+    }
+
+  } catch (error) {
+    console.error(error);
+    alert("⚠️ Server error. Try again.");
+  }
+});
