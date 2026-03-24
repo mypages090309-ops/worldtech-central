@@ -5,22 +5,29 @@ AOS.init({
 });
 
 // Mobile menu
-document.getElementById("hamburger").onclick = () => {
-  document.getElementById("navLinks").classList.toggle("active");
-};
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
 
 // Particles
 particlesJS("particles-js", {
   particles: {
-    number: { value: 70 },
+    number: { value: 60 },
     color: { value: "#38bdf8" },
+    shape: { type: "circle" },
+    opacity: { value: 0.4 },
     size: { value: 3 },
-    move: { speed: 1.5 }
+    move: {
+      enable: true,
+      speed: 1.5
+    }
+  },
+  interactivity: {
+    events: {
+      onhover: { enable: true, mode: "repulse" }
+    }
   }
-});
-
-// 3D tilt effect
-VanillaTilt.init(document.querySelectorAll(".course-card"), {
-  max: 15,
-  speed: 400
 });
