@@ -5,7 +5,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
   const password = document.getElementById("password").value;
 
   try {
-    const res = await fetch("https://enrollmentworker.q2296439.workers.dev/login", {
+    const res = await fetch("https://loginworker.q2296439.workers.dev/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -17,7 +17,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
 
     if (result.success) {
       document.getElementById("message").innerText = "✅ Login successful!";
-      
+
       setTimeout(() => {
         window.location.href = "dashboard.html";
       }, 1500);
