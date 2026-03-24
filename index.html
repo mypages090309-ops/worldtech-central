@@ -10,6 +10,9 @@
 </head>
 <body>
 
+<!-- 🔥 PARTICLES BACKGROUND -->
+<div id="particles-js"></div>
+
 <!-- NAVBAR -->
 <header class="navbar">
   <div class="logo">WorldTech Central Inc.</div>
@@ -21,7 +24,7 @@
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
 
-    <!-- ✅ FIXED LOGIN BUTTON -->
+    <!-- LOGIN BUTTON -->
     <button class="login-btn" onclick="window.location.href='login.html'">
       Login
     </button>
@@ -38,12 +41,12 @@
 
     <div class="hero-buttons" data-aos="zoom-in" data-aos-delay="400">
       
-      <!-- ✅ ENROLL BUTTON -->
+      <!-- ENROLL BUTTON -->
       <button class="cta" onclick="window.location.href='enroll.html'">
         Enroll Now
       </button>
 
-      <!-- ✅ SMOOTH SCROLL -->
+      <!-- VIEW COURSES -->
       <button class="secondary" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">
         View Courses
       </button>
@@ -87,9 +90,31 @@
   <p>© 2026 WorldTech Central Inc.</p>
 </footer>
 
-<!-- Scripts -->
+<!-- SCRIPTS -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+<!-- 🔥 PARTICLES CONFIG -->
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 60 },
+    size: { value: 3 },
+    move: { speed: 1 },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#38bdf8",
+      opacity: 0.4
+    }
+  }
+});
+</script>
+
 <script src="main.js"></script>
 
 </body>
