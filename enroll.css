@@ -1,9 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* CLOSE BUTTON */
 .close-btn {
   position: absolute;
   top: 20px;
   right: 25px;
-  font-size: 22px;
+  font-size: 24px;
   background: transparent;
   border: none;
   color: white;
@@ -14,4 +30,75 @@
 .close-btn:hover {
   color: #38bdf8;
   transform: scale(1.2);
+}
+
+/* FORM CONTAINER */
+.container {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 30px;
+  border-radius: 15px;
+  width: 350px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* TITLE */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* INPUT GROUP */
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #cbd5f5;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #1e293b;
+  color: white;
+}
+
+/* BUTTON */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg,#38bdf8,#22c55e);
+  border: none;
+  border-radius: 8px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(56,189,248,0.6);
+}
+
+/* SUCCESS MESSAGE */
+#successMsg {
+  margin-top: 15px;
+  text-align: center;
+  color: #22c55e;
+  font-weight: bold;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+  }
 }
