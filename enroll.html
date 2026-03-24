@@ -6,10 +6,10 @@
   <link rel="stylesheet" href="enroll.css">
 </head>
 <body>
-  
-<!-- PARTICLES BACKGROUND -->
+
+<!-- ✅ ADD PARTICLES -->
 <div id="particles-js"></div>
-  
+
 <!-- CLOSE BUTTON -->
 <button class="close-btn" onclick="goBack()">✕</button>
 
@@ -64,6 +64,25 @@
   <p id="successMsg"></p>
 
 </div>
+
+<!-- ✅ ADD THESE -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 60 },
+    size: { value: 3 },
+    move: { speed: 1 },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#38bdf8",
+      opacity: 0.4
+    }
+  }
+});
+</script>
 
 <script src="enroll.js"></script>
 </body>
